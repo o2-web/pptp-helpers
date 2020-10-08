@@ -1,4 +1,4 @@
-# Pptp simple helpers
+# Simple helpers to manage vpn users
 
 #### Before usage
 `chmod +x *.sh`

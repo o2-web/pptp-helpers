@@ -68,6 +68,8 @@ cd /
 MENU_OPTION="1" CLIENT="$client_name" PASS="1" ./openvpn-install.sh
 chmod 777 "/root/$client_name.ovpn"
 
+service openvpn@server restart
+
 echo "$new_client_response"
 
 exit 0

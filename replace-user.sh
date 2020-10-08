@@ -27,6 +27,13 @@ echo "deleted chap-secret: $existing_chap_secret"
 # generate a new user
 new_client_response="$(./generate-user.sh)"
 
+if jq -e . >/dev/null 2>&1 <<<"$new_client_response"; then
+    # echo "Parsed JSON successfully and got something other than false/null"
+else
+    echo "error: failed to parse JSON, or got false/null"
+    exit 1
+fi
+
 echo "$new_client_response"
 
 exit 0
